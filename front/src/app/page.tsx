@@ -3,6 +3,13 @@ import { useState } from 'react';
 import { ethers } from 'ethers';
 import token from '@/abi/Token.sol/Token.json';
 
+// Extend the Window interface to include the ethereum property
+declare global {
+  interface Window {
+    ethereum?: any;
+  }
+}
+
 // コントラクトのデプロイ後のアドレスを設定
 const TOKEN_ADDRESS = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
 
