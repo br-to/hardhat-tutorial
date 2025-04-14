@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { ethers } from 'ethers';
-import abi from '@/abi/Token.sol/Token.json';
+import token from '@/abi/Token.sol/Token.json';
 
 // コントラクトのデプロイ後のアドレスを設定
 const TOKEN_ADDRESS = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
@@ -40,7 +40,7 @@ export default function Home() {
       // MetaMaskのプロバイダーを取得
       const provider = new ethers.BrowserProvider(window.ethereum);
       // コントラクトのインスタンスを作成
-      const contract = new ethers.Contract(TOKEN_ADDRESS, abi.abi, provider);
+      const contract = new ethers.Contract(TOKEN_ADDRESS, token.abi, provider);
       // balanceOf関数を呼び出してトークン残高を取得
       const balance = await contract.balanceOf(address);
       setBalance(balance.toString());
@@ -57,7 +57,7 @@ export default function Home() {
       const provider = new ethers.BrowserProvider(window.ethereum);
       const signer = await provider.getSigner();
       // 書き込み用のコントラクトインスタンスを作成
-      const contract = new ethers.Contract(TOKEN_ADDRESS, abi.abi, signer);
+      const contract = new ethers.Contract(TOKEN_ADDRESS, token.abi, signer);
 
       // transfer関数を呼び出してトークンを送金
       const tx = await contract.transfer(recipient, amount);
