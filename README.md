@@ -1,13 +1,9 @@
-# Sample Hardhat Project
+# サンプルDApp作成
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+こちらの記事を参照してください
 
-Try running some of the following tasks:
+## スマートコントラクト作成
+https://www.br-to.dev/blog/hardhat/
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.ts
-```
+## フロントエンド作成とMetamask接続
+https://www.br-to.dev/blog/next-hardhat/
